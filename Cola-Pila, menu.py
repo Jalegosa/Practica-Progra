@@ -95,6 +95,28 @@ def mostrar_cola():
     if decision != 's':
         print("Saliendo del sistema. ¡Hasta pronto!")
         exit()
+def turno_paciente():
+    if cola_pacientes:
+        paciente = cola_pacientes[0]  # Mostramos al primero sin sacarlo aún
+        print("\n>>> TURNO DEL PACIENTE <<<")
+        print(f"Nombre: {paciente['nombre']} {paciente['apellido']}")
+        print(f"Edad: {paciente['edad']}")
+        print(f"Malestar: {paciente['malestar']}")
+
+        confirmado = input("¿El paciente ya fue revisado? (s/n): ").lower()
+        if confirmado == 's':
+            cola_pacientes.popleft()
+            print(f"Paciente {paciente['nombre']} ha sido atendido y removido de la cola.")
+        else:
+            print(f"Espere que haya finalizado la revisión del paciente: {paciente['nombre']}.")
+
+    else:
+        print("\nNo hay pacientes en espera.")
+
+    decision = input("\n¿Desea regresar al MENÚ PACIENTES? (s/n): ").lower()
+    if decision != 's':
+        print("Saliendo del sistema. ¡Hasta pronto!")
+        exit()
 
 
 # Ejecutar el menú principal

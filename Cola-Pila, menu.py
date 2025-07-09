@@ -1,6 +1,5 @@
 from collections import deque
 
-# Cola de pacientes (FIFO)
 cola_pacientes = deque()
 
 def menu_principal():
@@ -67,7 +66,7 @@ def agregar_paciente():
 
         decision = input("¿Desea agregar otro paciente? (s/n): ").lower()
         if decision != 's':
-            break  # Sale al MENÚ PACIENTES
+            break
 
 def turno_paciente():
     if cola_pacientes:

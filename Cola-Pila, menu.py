@@ -8,7 +8,7 @@ def menu_principal():
         print("1. Pacientes en recepción")
         print("2. Farmacia")
         print("3. Salir")
-{}
+
         opcion = input("Seleccione una opción: ")
 
         if opcion == '1':
